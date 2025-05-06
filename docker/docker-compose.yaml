@@ -67,8 +67,8 @@ services:
     volumes:
       - ./sbc/drachtio.conf.xml:/etc/drachtio.conf.xml
     ports:
-      - "5060:5060/udp"
-      - "5060:5060/tcp"
+      - "5070:5070/udp"
+      - "5070:5070/tcp"
     depends_on:
       - rtpengine
     networks:
@@ -89,7 +89,7 @@ services:
     image: jambonz/api-server:latest
     restart: always
     ports:
-      - "3000:3000"
+      - "3003:3000"
     environment:
       <<: *common-variables
       HTTP_PORT: 3000
@@ -110,7 +110,7 @@ services:
     ports:
       - "3001:3001"
     environment:
-      API_BASE_URL: http://${HOST_IP}:3000/v1
+      API_BASE_URL: http://192.168.3.158:3003/v1
     depends_on:
       - api-server
 
@@ -216,7 +216,7 @@ services:
       GOOGLE_APPLICATION_CREDENTIALS: /opt/credentials/gcp.json
       DRACHTIO_HOST: 172.10.0.50
       JAMBONES_NETWORK_CIDR: 172.10.0.0/16
-      HTTP_PORT: 3000
+      HTTP_PORT: 3008
       JAMBONES_SBCS: 172.10.0.10
       JAMBONES_FEATURE_SERVERS: 172.10.0.50:9022:cymru
       JAMBONES_FREESWITCH: 172.10.0.51:8021:JambonzR0ck$

@@ -1,0 +1,11 @@
+{
+  "name": "jambonz-infrastructure",
+  "version": "1.0.0",
+  "description": "This repository contains [packer](packer.io) and Cloudformation templates for deploying jambonz on AWS EC2 instances.  For deploying jambonz on Kubernetes, please refer to the [jambonz helm chart repo](https://github.com/jambonz/helm-charts).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
